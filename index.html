@@ -312,58 +312,183 @@
             text-decoration: underline;
         }
 
-        /* === ФИЛЬТРЫ === */
-        .filters-panel {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
+        /* === FAB ФИЛЬТРЫ === */
+        .fab-container {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
         }
 
-        .filter-btn {
-            padding: 10px 18px;
+        .fab-btn {
+            width: 56px;
+            height: 56px;
+            border: none;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.5);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .fab-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 28px rgba(102, 126, 234, 0.6);
+        }
+
+        .fab-btn.active {
+            transform: rotate(45deg);
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            box-shadow: 0 4px 20px rgba(231, 76, 60, 0.5);
+        }
+
+        .fab-icon {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1.4em;
+        }
+
+        .fab-menu {
+            position: absolute;
+            bottom: 70px;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.8);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fab-menu.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .fab-menu-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 18px;
             border: none;
             border-radius: 25px;
-            background: rgba(255,255,255,0.9);
-            color: #667eea;
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
             font-weight: 600;
             font-size: 0.9em;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            white-space: nowrap;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            transition: all 0.2s ease;
+            transform: translateX(-20px);
+            opacity: 0;
         }
 
-        .filter-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        .fab-menu.open .fab-menu-item {
+            transform: translateX(0);
+            opacity: 1;
         }
 
-        .filter-btn:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .fab-menu.open .fab-menu-item:nth-child(1) { transition-delay: 0.05s; }
+        .fab-menu.open .fab-menu-item:nth-child(2) { transition-delay: 0.1s; }
+        .fab-menu.open .fab-menu-item:nth-child(3) { transition-delay: 0.15s; }
+        .fab-menu.open .fab-menu-item:nth-child(4) { transition-delay: 0.2s; }
+        .fab-menu.open .fab-menu-item:nth-child(5) { transition-delay: 0.25s; }
+        .fab-menu.open .fab-menu-item:nth-child(6) { transition-delay: 0.3s; }
+        .fab-menu.open .fab-menu-item:nth-child(7) { transition-delay: 0.35s; }
+        .fab-menu.open .fab-menu-item:nth-child(8) { transition-delay: 0.4s; }
+
+        .fab-menu-item:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateX(5px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
         }
 
-        .filter-btn.active {
+        .fab-menu-item.active {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
         }
 
-        .filter-btn .count {
-            display: inline-block;
-            background: rgba(0,0,0,0.1);
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.85em;
-            margin-left: 6px;
+        .fab-menu-item .filter-icon {
+            font-size: 1.1em;
         }
 
-        .filter-btn.active .count {
-            background: rgba(255,255,255,0.25);
+        .fab-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            min-width: 22px;
+            height: 22px;
+            background: #e74c3c;
+            color: white;
+            font-size: 0.75em;
+            font-weight: 700;
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 6px;
+            box-shadow: 0 2px 8px rgba(231, 76, 60, 0.4);
+            display: none;
+        }
+
+        .fab-badge.visible {
+            display: flex;
+        }
+
+        .fab-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .fab-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .fab-current-filter {
+            position: absolute;
+            left: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #667eea;
+            white-space: nowrap;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .fab-container:hover .fab-current-filter {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .fab-container.menu-open .fab-current-filter {
+            opacity: 0;
+            visibility: hidden;
         }
 
         /* === КНОПКИ ЭКСПОРТА === */
@@ -720,7 +845,8 @@
                 padding: 20px !important;
             }
 
-            .filters-panel,
+            .fab-container,
+            .fab-overlay,
             .scroll-top-btn,
             .scroll-down-btn,
             .timeline-slider-container,
@@ -798,18 +924,42 @@
 <body>
     <div class="container">
         <h1>⚖️ Хронология судебных событий 2025</h1>
-        <p class="subtitle">MAIRE S.p.A. и EuroChem North-West 2 | Актуализировано: 06 декабря 2025</p>
+        <p class="subtitle">MAIRE S.p.A. и EuroChem North-West 2 | Актуализировано: 08 декабря 2025</p>
 
-        <!-- ПАНЕЛЬ ФИЛЬТРОВ -->
-        <div class="filters-panel">
-            <button class="filter-btn active" type="button" onclick="filterEvents('all', this)">Все события</button>
-            <button class="filter-btn" type="button" onclick="filterEvents('main-case', this)">Основной иск</button>
-            <button class="filter-btn" type="button" onclick="filterEvents('anti-suit', this)">Анти-исковые запреты</button>
-            <button class="filter-btn" type="button" onclick="filterEvents('assignment', this)">Оспаривание уступки</button>
-            <button class="filter-btn" type="button" onclick="filterEvents('banks', this)">Банки</button>
-            <button class="filter-btn" type="button" onclick="filterEvents('maire', this)">MAIRE</button>
-            <button class="filter-btn" type="button" onclick="filterEvents('regulators', this)">Регуляторы</button>
-            <button class="filter-btn" type="button" onclick="filterEvents('enforcement', this)">Исполнение</button>
+        <!-- FAB МЕНЮ ФИЛЬТРОВ -->
+        <div class="fab-overlay" id="fabOverlay" onclick="toggleFabMenu()"></div>
+        <div class="fab-container" id="fabContainer">
+            <div class="fab-current-filter" id="fabCurrentFilter">Все события</div>
+            <div class="fab-menu" id="fabMenu">
+                <button class="fab-menu-item active" data-filter="all" onclick="applyFilter('all', this)">
+                    <span class="filter-icon">📋</span> Все события
+                </button>
+                <button class="fab-menu-item" data-filter="main-case" onclick="applyFilter('main-case', this)">
+                    <span class="filter-icon">⚖️</span> Основной иск
+                </button>
+                <button class="fab-menu-item" data-filter="anti-suit" onclick="applyFilter('anti-suit', this)">
+                    <span class="filter-icon">🛡️</span> Анти-исковые запреты
+                </button>
+                <button class="fab-menu-item" data-filter="assignment" onclick="applyFilter('assignment', this)">
+                    <span class="filter-icon">📝</span> Оспаривание уступки
+                </button>
+                <button class="fab-menu-item" data-filter="banks" onclick="applyFilter('banks', this)">
+                    <span class="filter-icon">🏦</span> Банки
+                </button>
+                <button class="fab-menu-item" data-filter="maire" onclick="applyFilter('maire', this)">
+                    <span class="filter-icon">🏢</span> MAIRE
+                </button>
+                <button class="fab-menu-item" data-filter="regulators" onclick="applyFilter('regulators', this)">
+                    <span class="filter-icon">📊</span> Регуляторы
+                </button>
+                <button class="fab-menu-item" data-filter="enforcement" onclick="applyFilter('enforcement', this)">
+                    <span class="filter-icon">⚡</span> Исполнение
+                </button>
+            </div>
+            <button class="fab-btn" id="fabBtn" type="button" onclick="toggleFabMenu()">
+                <span class="fab-icon">⚙</span>
+                <span class="fab-badge" id="fabBadge"></span>
+            </button>
         </div>
 
         <!-- TIMELINE SLIDER -->
@@ -1241,15 +1391,61 @@
     <button class="scroll-down-btn" id="scrollDownBtn" type="button" onclick="window.scrollTo(0, document.body.scrollHeight);">↓</button>
 
     <script>
-    // === ФУНКЦИЯ ФИЛЬТРАЦИИ ===
-    function filterEvents(filter, btn) {
-        // Убираем active со всех кнопок
-        var allBtns = document.getElementsByClassName('filter-btn');
-        for (var i = 0; i < allBtns.length; i++) {
-            allBtns[i].className = 'filter-btn';
+    // === FAB МЕНЮ ФИЛЬТРОВ ===
+    var currentFilter = 'all';
+    var filterNames = {
+        'all': 'Все события',
+        'main-case': 'Основной иск',
+        'anti-suit': 'Анти-исковые запреты',
+        'assignment': 'Оспаривание уступки',
+        'banks': 'Банки',
+        'maire': 'MAIRE',
+        'regulators': 'Регуляторы',
+        'enforcement': 'Исполнение'
+    };
+
+    function toggleFabMenu() {
+        var fabBtn = document.getElementById('fabBtn');
+        var fabMenu = document.getElementById('fabMenu');
+        var fabOverlay = document.getElementById('fabOverlay');
+        var fabContainer = document.getElementById('fabContainer');
+        
+        var isOpen = fabMenu.classList.contains('open');
+        
+        if (isOpen) {
+            fabMenu.classList.remove('open');
+            fabBtn.classList.remove('active');
+            fabOverlay.classList.remove('active');
+            fabContainer.classList.remove('menu-open');
+        } else {
+            fabMenu.classList.add('open');
+            fabBtn.classList.add('active');
+            fabOverlay.classList.add('active');
+            fabContainer.classList.add('menu-open');
         }
-        // Добавляем active на нажатую
-        btn.className = 'filter-btn active';
+    }
+
+    function applyFilter(filter, btn) {
+        currentFilter = filter;
+        
+        // Обновляем активную кнопку в меню
+        var allBtns = document.getElementsByClassName('fab-menu-item');
+        for (var i = 0; i < allBtns.length; i++) {
+            allBtns[i].classList.remove('active');
+        }
+        btn.classList.add('active');
+        
+        // Обновляем подсказку текущего фильтра
+        document.getElementById('fabCurrentFilter').textContent = filterNames[filter];
+        
+        // Показываем/скрываем бейдж на FAB кнопке
+        var fabBadge = document.getElementById('fabBadge');
+        if (filter === 'all') {
+            fabBadge.classList.remove('visible');
+        } else {
+            fabBadge.classList.add('visible');
+            fabBadge.textContent = '1';
+        }
         
         // Фильтруем события
         var items = document.getElementsByClassName('timeline-item');
@@ -1266,7 +1462,20 @@
                 }
             }
         }
+        
+        // Закрываем меню после выбора
+        toggleFabMenu();
     }
+
+    // Закрытие по Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            var fabMenu = document.getElementById('fabMenu');
+            if (fabMenu.classList.contains('open')) {
+                toggleFabMenu();
+            }
+        }
+    });
 
     // === КНОПКА НАВЕРХ - показ/скрытие при скролле ===
     window.onscroll = function() {
