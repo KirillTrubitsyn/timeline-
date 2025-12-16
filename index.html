@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Иконка для iOS (Apple Touch Icon) -->
+    
+    <!-- iOS Icons & Settings -->
     <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
-    <link rel="apple-touch-icon" href="icon-180.png">
-
-    <!-- Иконка для Android и PWA -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#667eea">
-
-    <!-- Стандартный favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
-
-    <!-- Meta для iOS веб-приложения -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Хронология">
-
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="EuroChem Дела">
+    
+    <!-- Android Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#764ba2">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+    
     <title>Хронология событий 2025 – 2026</title>
     <style>
         * {
@@ -941,7 +939,7 @@
 <body>
     <div class="container">
         <h1>⚖️ Хронология событий 2025 – 2026</h1>
-        <p class="subtitle">MAIRE S.p.A. и EuroChem North-West 2 | Актуализировано: <span id="updateDate"></span></p>
+        <p class="subtitle">MAIRE S.p.A. и EuroChem North-West 2 | Актуализировано: 16 декабря 2025</p>
 
         <!-- FAB МЕНЮ ФИЛЬТРОВ -->
         <div class="fab-overlay" id="fabOverlay" onclick="toggleFabMenu()"></div>
@@ -996,7 +994,6 @@
         <div class="timeline-section">
             <div class="section-title completed">
                 ✓ Прошедшие события
-                <span class="status-badge completed">Выполнено</span>
             </div>
 
             <div class="timeline-item" data-category="main-case">
@@ -1391,13 +1388,43 @@
                     </div>
                 </div>
             </div>
+
+            <div class="timeline-item" data-category="banks anti-suit" id="event-12-12-2025-banks-antisuit">
+                <div class="timeline-date">
+                    <div class="date-badge completed">12.12.2025</div>
+                </div>
+                <div class="timeline-content completed">
+                    <div class="content-title">Заявление об антиисковом запрете против банков</div>
+                    <div class="content-description">
+                        Подано заявление в АС СПб и ЛО о запрете продолжать и инициировать разбирательства в иностранных судах против Société Générale S.A. и ING Bank N.V. в порядке ст. 248.2 АПК РФ.
+                        <br><br>
+                        <strong>Документ:</strong> <a href="https://drive.google.com/file/d/1_frXLdTQDZBNNwnGtV92trXDv-XIMH7a/view?usp=sharing" target="_blank">Заявление от 12.12.2025</a>
+                        <br><br>
+                        <strong>Против кого:</strong>
+                        <br>• <strong>Société Générale S.A.</strong> (Франция) — гарантии на €137 159 882,61
+                        <br>• <strong>ING Bank N.V.</strong> (Нидерланды) и АО «ИНГ Банк (Евразия)» — гарантия на €75 285 299,85
+                        <br><br>
+                        <strong>Требования:</strong>
+                        <br>• Запретить инициировать разбирательства об анти-исковых запретах
+                        <br>• Запретить продолжать и инициировать любые иные разбирательства против ЕХСЗ-2
+                        <br>• Запретить предъявлять решения к исполнению за пределами РФ
+                        <br><br>
+                        <strong>Астрент (в случае неисполнения):</strong>
+                        <br>• Société Générale: <span class="amount">€13 715 988,26</span> (1/10 от суммы требований)
+                        <br>• ING Bank: <span class="amount">€7 528 529,99</span> (1/10 от суммы требований)
+                        <br><br>
+                        <strong>Статус:</strong> <span class="case-status">Ожидает принятия к производству</span>
+                        <br><br>
+                        <strong>Основание:</strong> Решение АС г. Москвы от 06.12.2025 по делу А40-231304/2025 подтвердило обоснованность требований ЕХСЗ-2 по обязательствам, обеспеченным банковскими гарантиями (взыскано 171+ млрд руб.).
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- ЗАПЛАНИРОВАННЫЕ СОБЫТИЯ -->
         <div class="timeline-section">
             <div class="section-title planned">
                 📋 Запланированные события
-                <span class="status-badge planned">Предстоит</span>
             </div>
 
             <div class="timeline-item" data-category="maire" data-target-date="2025-12-22">
@@ -1475,37 +1502,6 @@
                 </div>
             </div>
 
-            <div class="timeline-item" data-category="main-case" data-target-date="2026-01-26">
-                <div class="timeline-date">
-                    <div class="date-badge planned">26.01.2026</div>
-                </div>
-                <div class="timeline-content planned">
-                    <div class="content-title">Заседание по ходатайству МТ Руссия об изменении порядка исполнения</div>
-                    <div class="content-description">
-                        Назначено судебное заседание по заявлению ООО «МТ Руссия» об изменении способа и порядка исполнения судебного акта (обеспечительных мер).
-                        <br><br>
-                        <strong>Дело:</strong> <span class="case-number">А40-231304/2025</span>
-                        <br><strong>Судья:</strong> Авагимян А.Г.
-                        <br><strong>Время:</strong> 12:00
-                        <br><strong>Место:</strong> АС г. Москвы, ул. Б. Тульская, д. 17, зал 3098, этаж 3
-                        <br><strong>Ссылка:</strong> <a href="https://kad.arbitr.ru/Card/4a142998-5ec0-4e26-92b1-9b3420595c21" target="_blank">КАД Арбитр</a>
-                        <br><strong>Определение:</strong> <a href="https://drive.google.com/file/d/19IbQl0D7V-5CHx5XxmrKahsgQKHN4Q6M/view?usp=sharing" target="_blank">О назначении заседания (12.12.2025)</a>
-                        <br><strong>Ходатайство:</strong> <a href="https://drive.google.com/file/d/1_f2QuGKGOcPao_fb2WPSiE-0Lc9EEoyn/view?usp=sharing" target="_blank">Ходатайство МТ Руссия (10.12.2025)</a>
-                        <br><br>
-                        <strong>Суть ходатайства:</strong>
-                        <br>МТ Руссия просит установить порядок исполнения определения об обеспечительных мерах, при котором арест денежных средств <span class="highlight">не препятствует выплате заработной платы сотрудникам</span> (платежи 1–3 очереди по ст. 855 ГК РФ).
-                        <br><br>
-                        <strong>Обоснование:</strong> Банки (Т-Банк, Росбанк) отказывают в исполнении платёжных поручений на выплату зарплаты, ссылаясь на арест счетов. МТ Руссия указывает, что обеспечение иска не должно нарушать очерёдность списания по ст. 855 ГК РФ, согласно которой выплата зарплаты (3-я очередь) имеет приоритет над исполнительными документами по гражданско-правовым обязательствам (4-я очередь).
-                        <br><br>
-                        <strong>Стороны:</strong>
-                        <br>• <strong>Истец:</strong> ООО «ЕвроХим Северо-Запад - 2»
-                        <br>• <strong>Ответчики:</strong> ООО «МТ Руссия», Tecnimont S.p.A.
-                        <br>• <strong>Заинтересованное лицо:</strong> <span class="regulator-badge">ПРК</span> Прокуратура города Москвы
-                        <div class="countdown-container" data-countdown="2026-01-26T12:00:00"></div>
-                    </div>
-                </div>
-            </div>
-
             <div class="timeline-item" data-category="banks" data-target-date="2026-06-04">
                 <div class="timeline-date">
                     <div class="date-badge planned">04.06.2026</div>
@@ -1578,15 +1574,6 @@
     <button class="scroll-down-btn" id="scrollDownBtn" type="button" onclick="window.scrollTo(0, document.body.scrollHeight);">↓</button>
 
     <script>
-    // === АВТОМАТИЧЕСКОЕ ОБНОВЛЕНИЕ ДАТЫ ===
-    (function() {
-        var months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
-                      'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
-        var today = new Date();
-        var dateStr = today.getDate() + ' ' + months[today.getMonth()] + ' ' + today.getFullYear();
-        document.getElementById('updateDate').textContent = dateStr;
-    })();
-
     // === FAB МЕНЮ ФИЛЬТРОВ ===
     var currentFilter = 'all';
     var filterNames = {
@@ -1732,7 +1719,7 @@
             '04.09.2025', '02.10.2025', '08.10.2025', '30.10.2025', '03.11.2025',
             '07.11.2025', '10.11.2025', '17.11.2025', '19.11.2025', '21.11.2025',
             '25.11.2025', '26.11.2025', '27.11.2025', '01.12.2025', '03.12.2025',
-            '10.12.2025', '22.12.2025', '15.01.2026', '26.01.2026', '04.06.2026', '08.12.2026'
+            '10.12.2025', '12.12.2025', '22.12.2025', '15.01.2026', '04.06.2026', '08.12.2026'
         ];
         
         if (slider) {
