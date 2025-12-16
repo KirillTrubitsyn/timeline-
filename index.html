@@ -939,7 +939,7 @@
 <body>
     <div class="container">
         <h1>⚖️ Хронология событий 2025 – 2026</h1>
-        <p class="subtitle">MAIRE S.p.A. и EuroChem North-West 2 | Актуализировано: <span id="updateDate"></span></p>
+        <p class="subtitle">MAIRE S.p.A. и EuroChem North-West 2 | Актуализировано: 16 декабря 2025</p>
 
         <!-- FAB МЕНЮ ФИЛЬТРОВ -->
         <div class="fab-overlay" id="fabOverlay" onclick="toggleFabMenu()"></div>
@@ -1323,6 +1323,30 @@
 
             <div class="timeline-item" data-category="enforcement">
                 <div class="timeline-date">
+                    <div class="date-badge completed">04.12.2025</div>
+                </div>
+                <div class="timeline-content completed">
+                    <div class="content-title">Арест 99% доли Tecnimont в ООО «МТ Руссия»</div>
+                    <div class="content-description">
+                        Судебный пристав-исполнитель СОСП по г. Москве № 1 ГМУ ФССП России Новиков А.А. вынес постановление о наложении ареста на долю Tecnimont S.p.A. в уставном капитале ООО «МТ Руссия».
+                        <br><br>
+                        <strong>Исполнительное производство:</strong> № 825228/25/98077-ИП от 17.11.2025
+                        <br><strong>Основание:</strong> Исполнительный лист по делу <span class="case-number">А40-231304/2025</span>
+                        <br><strong>Документ:</strong> <a href="https://drive.google.com/file/d/1SbXrVdDYSUe90ISzB5K9dZiH4cSjkCfP/view?usp=sharing" target="_blank">Постановление от 04.12.2025</a>
+                        <br><br>
+                        <strong>Меры:</strong>
+                        <br>• Арест <span class="amount">99% доли</span> Tecnimont S.p.A. в уставном капитале ООО «МТ Руссия» (ИНН 7701716677, ОГРН 5077746557972)
+                        <br>• <strong>Запрет должнику:</strong> отчуждать долю, голосовать на общем собрании участников
+                        <br>• <strong>Запрет МИФНС № 46 и УФНС по г. Москве:</strong> вносить любые изменения в ЕГРЮЛ в отношении ООО «МТ Руссия»
+                        <br>• <strong>Запрет реорганизации и ликвидации</strong> с участием ООО «МТ Руссия»
+                        <br><br>
+                        <strong>Значение:</strong> Tecnimont S.p.A. лишён возможности управлять своей российской дочерней компанией, принимать корпоративные решения и распоряжаться долей до полного погашения долга.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-category="enforcement">
+                <div class="timeline-date">
                     <div class="date-badge completed">08.12.2025</div>
                 </div>
                 <div class="timeline-content completed">
@@ -1350,7 +1374,7 @@
                         <br><br>
                         <strong>5. Арест 99% доли в ООО «МТ Руссия»</strong> (должник: Tecnimont S.p.A., ИП № 825228/25/98077-ИП)
                         <br>• Наложение ареста на 99% доли Tecnimont S.p.A. в уставном капитале ООО «МТ Руссия» (ИНН 7701716677)
-                        <br>• Направление постановления об аресте в регистрирующий орган
+                        <br>• <span class="highlight" style="background: #d4edda; color: #155724;">✅ Исполнено: Постановление от 04.12.2025</span>
                         <br><br>
                         <strong>6. Арест имущества в офисе</strong> (должник: МТ Руссия, ИП № 846124/25/98077-ИП)
                         <br>• Выезд пристава в офис МТ Руссия (Пресненская наб., д. 10, эт. 25, пом. I, ком. 13)
@@ -1574,15 +1598,6 @@
     <button class="scroll-down-btn" id="scrollDownBtn" type="button" onclick="window.scrollTo(0, document.body.scrollHeight);">↓</button>
 
     <script>
-    // === АВТОМАТИЧЕСКОЕ ОБНОВЛЕНИЕ ДАТЫ ===
-    (function() {
-        var months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
-                      'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
-        var today = new Date();
-        var dateStr = today.getDate() + ' ' + months[today.getMonth()] + ' ' + today.getFullYear();
-        document.getElementById('updateDate').textContent = dateStr;
-    })();
-
     // === FAB МЕНЮ ФИЛЬТРОВ ===
     var currentFilter = 'all';
     var filterNames = {
@@ -1728,7 +1743,7 @@
             '04.09.2025', '02.10.2025', '08.10.2025', '30.10.2025', '03.11.2025',
             '07.11.2025', '10.11.2025', '17.11.2025', '19.11.2025', '21.11.2025',
             '25.11.2025', '26.11.2025', '27.11.2025', '01.12.2025', '03.12.2025',
-            '10.12.2025', '12.12.2025', '22.12.2025', '15.01.2026', '04.06.2026', '08.12.2026'
+            '04.12.2025', '05.12.2025', '08.12.2025', '10.12.2025', '12.12.2025', '22.12.2025', '15.01.2026', '04.06.2026', '08.12.2026'
         ];
         
         if (slider) {
