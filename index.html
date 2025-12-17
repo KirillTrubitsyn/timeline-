@@ -939,7 +939,7 @@
 <body>
     <div class="container">
         <h1>⚖️ Хронология событий 2025 – 2026</h1>
-        <p class="subtitle">MAIRE S.p.A. и EuroChem North-West 2 | Актуализировано: <span id="updateDate"></span></p>
+        <p class="subtitle">MAIRE S.p.A. и EuroChem North-West 2 | Актуализировано: 17 декабря 2025</p>
 
         <!-- FAB МЕНЮ ФИЛЬТРОВ -->
         <div class="fab-overlay" id="fabOverlay" onclick="toggleFabMenu()"></div>
@@ -1074,7 +1074,7 @@
                     <div class="content-description">
                         Подан иск ООО «ЕХСЗ-2» в АС СПб и ЛО против <span class="highlight">MAIRE S.p.A.</span> (по материнской гарантии) на <span class="amount">202,7 млрд руб.</span>, одновременно заявлено ходатайство об аресте имущества и денежных средств.
                         <br><br>
-                        <strong>Дело:</strong> <span class="case-number">А56-114850/2025</span> <span class="case-status">Не назначено</span>
+                        <strong>Дело:</strong> <span class="case-number">А56-114850/2025</span> <span class="case-status" style="background: #f8d7da; color: #721c24;">Возвращено 17.12.2025</span>
                         <br><strong>Судья:</strong> Халимбекова А.М.
                         <br><strong>Ссылка:</strong> <a href="https://kad.arbitr.ru/Card/58841b2b-e043-4d4d-b46d-c5eea393ea8c" target="_blank">КАД Арбитр</a>
                         <br><strong>Документ:</strong> <a href="https://drive.google.com/file/d/1iHoae2OE7oVxnN3aHQTnmtP94LByYh0y/view?usp=drive_link" target="_blank">Исковое заявление</a>
@@ -1443,32 +1443,35 @@
                     </div>
                 </div>
             </div>
+
+            <div class="timeline-item" data-category="maire" id="event-17-12-2025-maire-return">
+                <div class="timeline-date">
+                    <div class="date-badge completed" style="background: #dc3545;">17.12.2025</div>
+                </div>
+                <div class="timeline-content completed" style="border-left-color: #dc3545;">
+                    <div class="content-title">⚠️ Возврат иска против MAIRE S.p.A.</div>
+                    <div class="content-description">
+                        Арбитражный суд СПб и ЛО (судья Халимбекова А.М.) вынес определение о возврате искового заявления ООО «ЕХСЗ-2» к MAIRE S.p.A. на <span class="amount">202,7 млрд руб.</span>
+                        <br><br>
+                        <strong>Дело:</strong> <span class="case-number">А56-114850/2025</span> <span class="case-status" style="background: #f8d7da; color: #721c24;">Возвращено</span>
+                        <br><strong>Судья:</strong> Халимбекова А.М.
+                        <br><strong>Ссылка:</strong> <a href="https://kad.arbitr.ru/Card/58841b2b-e043-4d4d-b46d-c5eea393ea8c" target="_blank">КАД Арбитр</a>
+                        <br><br>
+                        <strong>Основание возврата:</strong> Несоблюдение претензионного порядка урегулирования спора (ст. 129, ч. 2 ст. 115, ст. 222.6 АПК РФ).
+                        <br><br>
+                        <strong>Дальнейшие действия:</strong>
+                        <br>• Направление претензии в адрес MAIRE S.p.A.
+                        <br>• Повторная подача иска после соблюдения досудебного порядка (30 дней)
+                        <br>• Возможность обжалования определения о возврате
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- ЗАПЛАНИРОВАННЫЕ СОБЫТИЯ -->
         <div class="timeline-section">
             <div class="section-title planned">
                 📋 Запланированные события
-            </div>
-
-            <div class="timeline-item" data-category="maire" data-target-date="2025-12-22">
-                <div class="timeline-date">
-                    <div class="date-badge planned">22-26.12.2025</div>
-                </div>
-                <div class="timeline-content planned">
-                    <div class="content-title">Обеспечение иска в отношении MAIRE</div>
-                    <div class="content-description">
-                        Ожидается определение Арбитражного суда СПб и ЛО о принятии обеспечительных мер в виде ареста имущества и денежных средств MAIRE S.p.A. по делу <span class="case-number">А56-114850/2025</span>.
-                        <br><br>
-                        <strong>Судья:</strong> Халимбекова А.М.
-                        <br><strong>Ссылка:</strong> <a href="https://kad.arbitr.ru/Card/58841b2b-e043-4d4d-b46d-c5eea393ea8c" target="_blank">КАД Арбитр</a>
-                        <br><br>
-                        <strong>Статус:</strong> Ожидаем рассмотрение ходатайства об обеспечительных мерах.
-                        <br><br>
-                        Критическое значение для стратегии защиты активов группы MAIRE.
-                        <div class="countdown-container" data-countdown="2025-12-22"></div>
-                    </div>
-                </div>
             </div>
 
             <div class="timeline-item" data-category="enforcement" data-target-date="2025-12-22">
@@ -1598,15 +1601,6 @@
     <button class="scroll-down-btn" id="scrollDownBtn" type="button" onclick="window.scrollTo(0, document.body.scrollHeight);">↓</button>
 
     <script>
-    // === АВТОМАТИЧЕСКОЕ ОБНОВЛЕНИЕ ДАТЫ ===
-    (function() {
-        var months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
-                      'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
-        var today = new Date();
-        var dateStr = today.getDate() + ' ' + months[today.getMonth()] + ' ' + today.getFullYear();
-        document.getElementById('updateDate').textContent = dateStr;
-    })();
-
     // === FAB МЕНЮ ФИЛЬТРОВ ===
     var currentFilter = 'all';
     var filterNames = {
@@ -1752,7 +1746,7 @@
             '04.09.2025', '02.10.2025', '08.10.2025', '30.10.2025', '03.11.2025',
             '07.11.2025', '10.11.2025', '17.11.2025', '19.11.2025', '21.11.2025',
             '25.11.2025', '26.11.2025', '27.11.2025', '01.12.2025', '03.12.2025',
-            '04.12.2025', '05.12.2025', '08.12.2025', '10.12.2025', '12.12.2025', '22.12.2025', '15.01.2026', '04.06.2026', '08.12.2026'
+            '04.12.2025', '05.12.2025', '08.12.2025', '10.12.2025', '12.12.2025', '17.12.2025', '22.12.2025', '15.01.2026', '04.06.2026', '08.12.2026'
         ];
         
         if (slider) {
