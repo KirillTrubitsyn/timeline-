@@ -939,7 +939,7 @@
 <body>
     <div class="container">
         <h1>⚖️ Хронология событий 2025 – 2026</h1>
-        <p class="subtitle">MAIRE S.p.A. и EuroChem North-West 2 | Актуализировано: 17 декабря 2025</p>
+        <p class="subtitle">MAIRE S.p.A. и EuroChem North-West 2 | Актуализировано: <span id="updateDate"></span></p>
 
         <!-- FAB МЕНЮ ФИЛЬТРОВ -->
         <div class="fab-overlay" id="fabOverlay" onclick="toggleFabMenu()"></div>
@@ -1602,6 +1602,15 @@
     <button class="scroll-down-btn" id="scrollDownBtn" type="button" onclick="window.scrollTo(0, document.body.scrollHeight);">↓</button>
 
     <script>
+    // === АВТОМАТИЧЕСКОЕ ОБНОВЛЕНИЕ ДАТЫ ===
+    (function() {
+        var months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
+                      'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+        var today = new Date();
+        var dateStr = today.getDate() + ' ' + months[today.getMonth()] + ' ' + today.getFullYear();
+        document.getElementById('updateDate').textContent = dateStr;
+    })();
+
     // === FAB МЕНЮ ФИЛЬТРОВ ===
     var currentFilter = 'all';
     var filterNames = {
