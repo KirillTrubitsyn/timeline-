@@ -939,7 +939,7 @@
 <body>
     <div class="container">
         <h1>⚖️ Хронология событий 2025 – 2026</h1>
-        <p class="subtitle">MAIRE S.p.A. и EuroChem North-West 2 | Актуализировано: <span id="updateDate"></span></p>
+        <p class="subtitle">MAIRE S.p.A. и EuroChem North-West 2 | Актуализировано: 17 декабря 2025</p>
 
         <!-- FAB МЕНЮ ФИЛЬТРОВ -->
         <div class="fab-overlay" id="fabOverlay" onclick="toggleFabMenu()"></div>
@@ -1456,6 +1456,7 @@
                         <strong>Дело:</strong> <span class="case-number">А56-114850/2025</span> <span class="case-status" style="background: #f8d7da; color: #721c24;">Возвращено</span>
                         <br><strong>Судья:</strong> Халимбекова А.М.
                         <br><strong>Ссылка:</strong> <a href="https://kad.arbitr.ru/Card/58841b2b-e043-4d4d-b46d-c5eea393ea8c" target="_blank">КАД Арбитр</a>
+                        <br><strong>Определение:</strong> <a href="https://drive.google.com/file/d/1V0379JwxPjDPZmGxQRIlweoZ_Cwo7IM2/view?usp=sharing" target="_blank">О возврате искового заявления (17.12.2025)</a>
                         <br><br>
                         <strong>Основание возврата:</strong> Несоблюдение претензионного порядка урегулирования спора (ст. 129, ч. 2 ст. 115, ст. 222.6 АПК РФ).
                         <br><br>
@@ -1601,15 +1602,6 @@
     <button class="scroll-down-btn" id="scrollDownBtn" type="button" onclick="window.scrollTo(0, document.body.scrollHeight);">↓</button>
 
     <script>
-    // === АВТОМАТИЧЕСКОЕ ОБНОВЛЕНИЕ ДАТЫ ===
-    (function() {
-        var months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
-                      'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
-        var today = new Date();
-        var dateStr = today.getDate() + ' ' + months[today.getMonth()] + ' ' + today.getFullYear();
-        document.getElementById('updateDate').textContent = dateStr;
-    })();
-
     // === FAB МЕНЮ ФИЛЬТРОВ ===
     var currentFilter = 'all';
     var filterNames = {
