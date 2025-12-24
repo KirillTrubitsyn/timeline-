@@ -1,4 +1,4 @@
-const CACHE_NAME = 'timeline-v1';
+const CACHE_NAME = 'timeline-v2';
 const urlsToCache = [
     './',
     './index.html',
